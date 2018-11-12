@@ -13,25 +13,41 @@ source ~/.bashrc
 2-Download and install Cuda and CUDNN using following commands:
 
 curl -O https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+
 sudo dpkg -i cuda-repo-ubuntu1604_9.0.176-1_amd64.deb
+
 sudo apt-get update
+
 sudo apt-get install cuda-9-0
-sudo nvidia-smi -pm 1
+
 echo "Downloading and installing CUDNN"
+
 wget -O cudnn1.deb https://www.dropbox.com/s/jhbiqxo7vwcczpr/libcudnn7_7.3.1.20-1%2Bcuda9.0_amd64.deb?dl=0
+
 sudo dpkg -i cudnn1.deb
+
+
 wget -O cudnn2.deb https://www.dropbox.com/s/cmbmloxmbjdxgiy/libcudnn7-dev_7.3.1.20-1%2Bcuda9.0_amd64.deb?dl=0
+
 sudo dpkg -i cudnn2.deb
+
 wget -O cudnn3.deb https://www.dropbox.com/s/a3iwf7ko4x70yuw/test.deb?dl=0
+
 sudo dpkg -i cudnn3.deb
+
 echo 'export CUDA_HOME=/usr/local/cuda' >> ~/.bashrc
+
 echo 'export PATH=$PATH:$CUDA_HOME/bin' >> ~/.bashrc
+
 echo 'export LD_LIBRARY_PATH=/usr/local/cuda/extras/CUPTI/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
+
 source ~/.bashrc
 
 
 3-Install tensorflow for gpu
+
 sudo apt-get install python-dev python-pip libcupti-dev
+
 sudo pip install tensorflow-gpu
 
 
