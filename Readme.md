@@ -1,9 +1,13 @@
  1-First you need to download anaconda by running following commands:
 
 wget -O anaconda.sh https://repo.anaconda.com/archive/Anaconda2-5.3.0-Linux-x86_64.sh
+
 chmod a+x anaconda.sh
+
 source ./anaconda.sh
+
 echo 'export PATH=~/anaconda2/bin:$PATH'>> ~./bashrc
+
 source ~/.bashrc
 
 2-Download and install Cuda and CUDNN using following commands:
